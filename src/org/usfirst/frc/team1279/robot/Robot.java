@@ -77,6 +77,7 @@ public class Robot extends SampleRobot implements Constants {
 			System.out.println("Real robot mode");
 			//drive = new TalonDriveTrain(LF_DRIVE_CAN_ID, LR_DRIVE_CAN_ID, RF_DRIVE_CAN_ID, RR_DRIVE_CAN_ID, robotTable);
 			drive = new VictorDriveTrain(LF_DRIVE_CAN_ID, LR_DRIVE_CAN_ID, RF_DRIVE_CAN_ID, RR_DRIVE_CAN_ID, robotTable);
+			//PLEASE CHECK THE VICTOR IDs. They are in the constants file. WE DO NOT WANT TO BREAK GEARBOXES.
 			claw = new GearClaw(CLAW_CAN_ID, robotTable);
 			gearLift = new GearLift(claw, L_CLAW_LIFT_CAN_ID, robotTable);
 			climber = new Climber(CLIMBER_CAN_ID);
