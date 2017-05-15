@@ -61,11 +61,7 @@ public class Robot extends SampleRobot implements Constants {
 	}
 
 	//I hope this is right lol
-	//NOTE: PLEASE PLEASE PLEASE check the IDs for the Victor SPs so that we don't break a gearbox kthx
-	VictorSP LFvictor = new VictorSP(0); //left front
-	VictorSP LRvictor = new VictorSP(1); //left rear
-	VictorSP FRvictor = new VictorSP(2);
-	VictorSP FRvictor = new VictorSP(3)
+
 	@Override
 	public void robotInit() {
 		if (!testInput.get()) {
@@ -80,7 +76,7 @@ public class Robot extends SampleRobot implements Constants {
 		if (!test) {
 			System.out.println("Real robot mode");
 			//drive = new TalonDriveTrain(LF_DRIVE_CAN_ID, LR_DRIVE_CAN_ID, RF_DRIVE_CAN_ID, RR_DRIVE_CAN_ID, robotTable);
-			
+			drive = new VictorDriveTrain(LF_DRIVE_CAN_ID, LR_DRIVE_CAN_ID, RF_DRIVE_CAN_ID, RR_DRIVE_CAN_ID, robotTable);
 			claw = new GearClaw(CLAW_CAN_ID, robotTable);
 			gearLift = new GearLift(claw, L_CLAW_LIFT_CAN_ID, robotTable);
 			climber = new Climber(CLIMBER_CAN_ID);
